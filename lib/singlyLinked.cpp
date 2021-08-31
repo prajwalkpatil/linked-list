@@ -3,6 +3,7 @@
 
 void SLL::display(NODE *&head)
 {
+    std::cout << "\nLinked List";
     std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
     if (head == NULL)
     {
