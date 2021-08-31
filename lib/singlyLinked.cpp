@@ -42,3 +42,19 @@ void SLL::insertAtFront(NODE *head)
     temp = n;
     n->next = temp;
 }
+
+void SLL::insertAtEnd(NODE *head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = n;
+}
