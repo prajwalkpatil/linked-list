@@ -69,3 +69,25 @@ void SLL::deleteFromFront(NODE *head)
     head = temp->next;
     delete temp;
 }
+
+void SLL::deleteFromEnd(NODE *head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    NODE *temp2 = head;
+    int flag = 0;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+        if (flag != 0)
+        {
+            temp2 = temp2->next;
+        }
+        flag = 1;
+    }
+    temp2->next = NULL;
+    delete temp;
+}
