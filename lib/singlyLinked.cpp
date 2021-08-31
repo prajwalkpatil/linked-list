@@ -3,8 +3,8 @@
 
 void SLL::display(NODE *&head)
 {
-    std::cout << "\nLinked List";
-    std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
+    std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+    std::cout << "\nLinked List: \n";
     if (head == NULL)
     {
         std::cout << "The Linked List is Empty! " << std::endl;

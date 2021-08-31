@@ -23,7 +23,7 @@ public:
     int getKeyForSearch()
     {
         int k;
-        std::cout << "\nEnter the key:";
+        std::cout << "\nEnter the key: ";
         std::cin >> k;
         return k;
     }
