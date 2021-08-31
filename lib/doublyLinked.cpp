@@ -35,3 +35,20 @@ void DLL::insertAtFront(NODE *&head)
     n->next = temp;
     temp->prev = n;
 }
+
+void DLL::insertAtEnd(NODE *&head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = n;
+    n->prev = temp;
+}
