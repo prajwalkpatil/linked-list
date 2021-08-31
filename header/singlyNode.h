@@ -9,13 +9,9 @@ public:
 
     NODE()
     {
-        NODE::readDetails();
-        next = NULL;
-    }
-    void readDetails()
-    {
         std::cout << "\nEnter the value to be inserted: ";
         std::cin >> val;
+        next = NULL;
     }
     void displayNode()
     {

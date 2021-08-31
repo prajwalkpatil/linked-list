@@ -6,4 +6,5 @@ int main()
     NODE *head = NULL;
     SLL::insertAtFront(head);
     SLL::display(head);
+    return 0;
 }

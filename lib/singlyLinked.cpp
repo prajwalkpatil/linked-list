@@ -11,11 +11,13 @@ void SLL::display(NODE *&head)
         return;
     }
     NODE *temp = head;
+    std::cout << "Head ->";
     while (temp != NULL)
     {
         temp->displayNode();
         temp = temp->next;
     }
+    std::cout << " NULL";
     std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
 }
 
