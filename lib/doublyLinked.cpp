@@ -52,3 +52,15 @@ void DLL::insertAtEnd(NODE *&head)
     temp->next = n;
     n->prev = temp;
 }
+
+void DLL::deleteFromFront(NODE *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    head = temp->next;
+    (temp->next)->prev = head;
+    delete temp;
+}
