@@ -58,3 +58,14 @@ void SLL::insertAtEnd(NODE *head)
     }
     temp->next = n;
 }
+
+void SLL::deleteFromFront(NODE *head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    head = temp->next;
+    delete temp;
+}
