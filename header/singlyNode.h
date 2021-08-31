@@ -7,7 +7,15 @@ public:
     int val;
     NODE *next;
 
-    NODE();
-    void readDetails();
+    NODE()
+    {
+        NODE::readDetails();
+        next = NULL;
+    }
+    void readDetails()
+    {
+        std::cout << "Enter the value to be inserted: ";
+        std::cin >> val;
+    }
 };
 #endif
