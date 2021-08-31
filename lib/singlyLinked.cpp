@@ -3,11 +3,11 @@
 
 void SLL::display(NODE *&head)
 {
-    std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+    std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
     if (head == NULL)
     {
         std::cout << "The Linked List is Empty! " << std::endl;
-        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+        std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
         return;
     }
     NODE *temp = head;
@@ -18,7 +18,7 @@ void SLL::display(NODE *&head)
         temp = temp->next;
     }
     std::cout << " NULL";
-    std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+    std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
 }
 
 void SLL::insertAtFront(NODE *&head)
@@ -30,7 +30,7 @@ void SLL::insertAtFront(NODE *&head)
         return;
     }
     NODE *temp = head;
-    temp = n;
+    head = n;
     n->next = temp;
 }
 

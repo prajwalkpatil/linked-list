@@ -9,8 +9,10 @@ public:
 
     NODE()
     {
+        std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
         std::cout << "\nEnter the value to be inserted: ";
         std::cin >> val;
+        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
         next = NULL;
     }
     void displayNode()
