@@ -15,6 +15,7 @@ public:
         std::cin >> val;
         std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
         next = NULL;
+        prev = NULL;
     }
     void displayNode()
     {
