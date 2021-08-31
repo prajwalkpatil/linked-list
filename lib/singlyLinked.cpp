@@ -113,3 +113,32 @@ void SLL::insertAtPosition(NODE *head)
         temp = temp->next;
     }
 }
+
+void SLL::deleteFromPosition(NODE *head)
+{
+    int k = head->getKeyForSearch();
+    NODE *temp = head;
+    if (head->val == k)
+    {
+        head = temp->next;
+        delete temp;
+        return;
+    }
+    NODE *temp2 = head;
+    int flag = 0;
+    while (temp != NULL)
+    {
+        if (temp->val == k)
+        {
+            temp2->next = temp->next;
+            delete temp;
+            return;
+        }
+        temp = temp->next;
+        if (flag != 0)
+        {
+            temp2 = temp2->next;
+        }
+        flag = 1;
+    }
+}
