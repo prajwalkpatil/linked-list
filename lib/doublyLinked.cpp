@@ -21,3 +21,17 @@ void DLL::display(NODE *&head)
     std::cout << " NULL";
     std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
 }
+
+void DLL::insertAtFront(NODE *&head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    head = n;
+    n->next = temp;
+    temp->prev = n;
+}
