@@ -1,18 +1,7 @@
 #include <iostream>
 #include "../header/singlyNode.h"
 
-namespace SLL
-{
-    void insertAtFront();
-    void insertAtEnd();
-    void insertAtPosition();
-    void deleteFromFront();
-    void deleteFromEnd();
-    void deleteFromPosition();
-    void display();
-}
-
-void SLL::display(NODE *head)
+void SLL::display(NODE *&head)
 {
     std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
     if (head == NULL)
@@ -30,7 +19,7 @@ void SLL::display(NODE *head)
     std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
 }
 
-void SLL::insertAtFront(NODE *head)
+void SLL::insertAtFront(NODE *&head)
 {
     NODE *n = new NODE();
     if (head == NULL)
@@ -43,7 +32,7 @@ void SLL::insertAtFront(NODE *head)
     n->next = temp;
 }
 
-void SLL::insertAtEnd(NODE *head)
+void SLL::insertAtEnd(NODE *&head)
 {
     NODE *n = new NODE();
     if (head == NULL)
@@ -59,7 +48,7 @@ void SLL::insertAtEnd(NODE *head)
     temp->next = n;
 }
 
-void SLL::deleteFromFront(NODE *head)
+void SLL::deleteFromFront(NODE *&head)
 {
     if (head == NULL)
     {
@@ -70,7 +59,7 @@ void SLL::deleteFromFront(NODE *head)
     delete temp;
 }
 
-void SLL::deleteFromEnd(NODE *head)
+void SLL::deleteFromEnd(NODE *&head)
 {
     if (head == NULL)
     {
@@ -92,7 +81,7 @@ void SLL::deleteFromEnd(NODE *head)
     delete temp;
 }
 
-void SLL::insertAtPosition(NODE *head)
+void SLL::insertAtPosition(NODE *&head)
 {
     int k = head->getKeyForSearch();
     NODE *n = new NODE();
@@ -114,7 +103,7 @@ void SLL::insertAtPosition(NODE *head)
     }
 }
 
-void SLL::deleteFromPosition(NODE *head)
+void SLL::deleteFromPosition(NODE *&head)
 {
     int k = head->getKeyForSearch();
     NODE *temp = head;

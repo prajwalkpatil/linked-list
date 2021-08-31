@@ -30,4 +30,15 @@ public:
         return k;
     }
 };
+
+namespace SLL
+{
+    void insertAtFront(NODE *&);
+    void insertAtEnd(NODE *&);
+    void insertAtPosition(NODE *&);
+    void deleteFromFront(NODE *&);
+    void deleteFromEnd(NODE *&);
+    void deleteFromPosition(NODE *&);
+    void display(NODE *&);
+}
 #endif
