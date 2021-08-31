@@ -25,7 +25,6 @@ void SLL::display(NODE *head)
     while (temp != NULL)
     {
         temp->displayNode();
-        std::cout << "->";
         temp = temp->next;
     }
     std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";

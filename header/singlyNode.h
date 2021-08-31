@@ -20,6 +20,7 @@ public:
     void displayNode()
     {
         std::cout << " " << val << " ";
+        std::cout << "->";
     }
 };
 
