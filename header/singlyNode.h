@@ -14,7 +14,7 @@ public:
     }
     void readDetails()
     {
-        std::cout << "Enter the value to be inserted: ";
+        std::cout << "\nEnter the value to be inserted: ";
         std::cin >> val;
     }
     void displayNode()
@@ -22,6 +22,12 @@ public:
         std::cout << " " << val << " ";
         std::cout << "->";
     }
+    int getKeyForSearch()
+    {
+        int k;
+        std::cout << "\nEnter the key:";
+        std::cin >> k;
+        return k;
+    }
 };
-
 #endif

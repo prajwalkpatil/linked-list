@@ -91,3 +91,25 @@ void SLL::deleteFromEnd(NODE *head)
     temp2->next = NULL;
     delete temp;
 }
+
+void SLL::insertAtPosition(NODE *head)
+{
+    int k = head->getKeyForSearch();
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    while (temp != NULL)
+    {
+        if (temp->val == k)
+        {
+            n->next = temp->next;
+            temp->next = n;
+            return;
+        }
+        temp = temp->next;
+    }
+}
