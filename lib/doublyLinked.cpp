@@ -1,2 +1,23 @@
 #include <iostream>
 #include "../header/doublyNode.h"
+
+void DLL::display(NODE *&head)
+{
+    std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+    std::cout << "\nLinked List: \n";
+    if (head == NULL)
+    {
+        std::cout << "The Linked List is Empty! " << std::endl;
+        std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
+        return;
+    }
+    NODE *temp = head;
+    std::cout << "Head ->";
+    while (temp != NULL)
+    {
+        temp->displayNode();
+        temp = temp->next;
+    }
+    std::cout << " NULL";
+    std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
+}
