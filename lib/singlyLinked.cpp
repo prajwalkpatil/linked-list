@@ -29,3 +29,16 @@ void SLL::display(NODE *head)
     }
     std::cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
 }
+
+void SLL::insertAtFront(NODE *head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    temp = n;
+    n->next = temp;
+}
