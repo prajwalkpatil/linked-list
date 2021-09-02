@@ -32,12 +32,29 @@ void CSLL::insertAtFront(NODE *&head)
         return;
     }
     NODE *temp = head;
-    NODE *temp2 = head;
-    n->next = temp2;
+    n->next = temp;
     while (temp->next != head)
     {
         temp = temp->next;
     }
     head = n;
     temp->next = head;
+}
+
+void CSLL::insertAtEnd(NODE *&head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        head = n;
+        n->next = head;
+        return;
+    }
+    NODE *temp = head;
+    while (temp->next != head)
+    {
+        temp = temp->next;
+    }
+    n->next = head;
+    temp->next = n;
 }
