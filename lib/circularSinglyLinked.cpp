@@ -13,11 +13,12 @@ void CSLL::display(NODE *&head)
     }
     NODE *temp = head;
     std::cout << "Head -> ";
-    do
+    while (temp->next != head)
     {
         temp->displayNode();
         temp = temp->next;
-    } while (temp->next != head);
+    }
+    temp->displayNode();
     std::cout << " Head";
 }
 
@@ -26,16 +27,17 @@ void CSLL::insertAtFront(NODE *&head)
     NODE *n = new NODE();
     if (head == NULL)
     {
-        n->next = n;
         head = n;
+        n->next = head;
         return;
     }
     NODE *temp = head;
-    n->next = temp;
+    NODE *temp2 = head;
+    n->next = temp2;
     while (temp->next != head)
     {
         temp = temp->next;
     }
     head = n;
-    temp->next = n;
+    temp->next = head;
 }
