@@ -39,4 +39,14 @@ namespace SLL
     void deleteFromPosition(NODE *&);
     void display(NODE *&);
 }
+namespace CSLL
+{
+    void insertAtFront(NODE *&);
+    void insertAtEnd(NODE *&);
+    void insertAtPosition(NODE *&);
+    void deleteFromFront(NODE *&);
+    void deleteFromEnd(NODE *&);
+    void deleteFromPosition(NODE *&);
+    void display(NODE *&);
+}
 #endif
