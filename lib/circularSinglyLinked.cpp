@@ -81,3 +81,31 @@ void CSLL::deleteFromFront(NODE *&head)
     temp2->next = head;
     delete temp;
 }
+
+void CSLL::deleteFromEnd(NODE *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    NODE *temp2 = head;
+    int flag = 0;
+    if (temp->next == head)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    while (temp->next != head)
+    {
+        temp = temp->next;
+        if (flag)
+        {
+            temp2 = temp2->next;
+        }
+        flag = 1;
+    }
+    temp2->next = head;
+    delete temp;
+}
