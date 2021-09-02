@@ -138,3 +138,54 @@ void CSLL::insertAtPosition(NODE *&head)
         return;
     }
 }
+
+void CSLL::deleteFromPosition(NODE *&head)
+{
+    //Please forgive me if i have obliterated 😓
+    if (head == NULL)
+    {
+        return;
+    }
+    int k = head->getKeyForSearch();
+    NODE *temp = head;
+    if (temp == head && temp->next == head && temp->val == k)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    NODE *temp2 = head;
+    if (temp->val == k)
+    {
+        while (temp2->next != head)
+        {
+            temp2 = temp2->next;
+        }
+        head = temp->next;
+        temp2->next = head;
+        delete temp;
+        return;
+    }
+    int flag = 0;
+    do
+    {
+        if (temp->val == k)
+        {
+            temp2->next = temp->next;
+            delete temp;
+            return;
+        }
+        temp = temp->next;
+        if (flag)
+        {
+            temp2 = temp2->next;
+        }
+        flag = 1;
+    } while (temp != head);
+    if (temp2 == head && temp == head && temp->val == k)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+}
