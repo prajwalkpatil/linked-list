@@ -3,6 +3,9 @@
 
 void DLL::display(NODE *&head)
 {
+    NODE *temp;
+    NODE *temp2 = NULL;
+    temp = head;
     std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
     std::cout << "\nLinked List: \n";
     if (head == NULL)
@@ -11,11 +14,20 @@ void DLL::display(NODE *&head)
         std::cout << "\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n";
         return;
     }
-    NODE *temp = head;
-    std::cout << "Head ->";
+    std::cout << "Head <->";
     while (temp != NULL)
     {
-        temp->displayNode();
+        //?Check if the prev links of nodes are correct
+        if (temp->prev == temp2)
+        {
+            temp->displayNode();
+        }
+        else
+        {
+            std::cout << "\nError! with previous links " << std::endl;
+            return;
+        }
+        temp2 = temp;
         temp = temp->next;
     }
     std::cout << " NULL";
@@ -61,7 +73,10 @@ void DLL::deleteFromFront(NODE *&head)
     }
     NODE *temp = head;
     head = temp->next;
-    (temp->next)->prev = head;
+    if (temp->next != NULL)
+    {
+        (temp->next)->prev = NULL;
+    }
     delete temp;
 }
 
@@ -72,18 +87,17 @@ void DLL::deleteFromEnd(NODE *&head)
         return;
     }
     NODE *temp = head;
-    NODE *temp2 = head;
-    int flag = 0;
+    if (temp->next == NULL)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
     while (temp->next != NULL)
     {
         temp = temp->next;
-        if (flag != 0)
-        {
-            temp2 = temp2->next;
-        }
-        flag = 1;
     }
-    temp2->next = NULL;
+    (temp->prev)->next = NULL;
     delete temp;
 }
 
@@ -114,9 +128,16 @@ void DLL::deleteFromPosition(NODE *&head)
 {
     int k = head->getKeyForSearch();
     NODE *temp = head;
-    if (head->val == k)
+    if (temp->val == k && temp->next == NULL)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    else if (temp->val == k)
     {
         head = temp->next;
+        (temp->next)->prev = NULL;
         delete temp;
         return;
     }
@@ -126,16 +147,19 @@ void DLL::deleteFromPosition(NODE *&head)
     {
         if (temp->val == k)
         {
-            temp2->next = temp->next;
-            if (temp->next != NULL)
+            if (temp->next == NULL)
             {
-                (temp->next)->prev = temp2;
+                temp2->next = NULL;
+                delete temp;
+                return;
             }
+            temp2->next = temp->next;
+            (temp->next)->prev = temp2;
             delete temp;
             return;
         }
         temp = temp->next;
-        if (flag != 0)
+        if (flag)
         {
             temp2 = temp2->next;
         }
