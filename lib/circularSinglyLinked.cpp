@@ -58,3 +58,26 @@ void CSLL::insertAtEnd(NODE *&head)
     n->next = head;
     temp->next = n;
 }
+
+void CSLL::deleteFromFront(NODE *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    NODE *temp2 = head;
+    if (temp2->next == head)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    while (temp2->next != head)
+    {
+        temp2 = temp2->next;
+    }
+    head = temp->next;
+    temp2->next = head;
+    delete temp;
+}
