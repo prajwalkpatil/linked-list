@@ -141,7 +141,7 @@ void CSLL::insertAtPosition(NODE *&head)
 
 void CSLL::deleteFromPosition(NODE *&head)
 {
-    //Please forgive me if i have obliterated 😓
+    //Please forgive me if i have obfuscated 😓
     if (head == NULL)
     {
         return;
