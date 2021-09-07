@@ -97,3 +97,47 @@ void CDLL::deleteFromFront(NODE *&head)
     head = temp->next;
     delete temp;
 }
+
+void CDLL::insertAtPosition(NODE *&head)
+{
+
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        n->next = n;
+        n->prev = n;
+        head = n;
+        return;
+    }
+    int k = head->getKeyForSearch();
+    NODE *temp = head;
+    NODE *temp2 = head;
+    int flag = 0;
+    if (temp->next == head && temp->val == k)
+    {
+        n->next = temp;
+        n->prev = temp;
+        temp->next = n;
+        return;
+    }
+    while (temp->next != head)
+    {
+        if (temp->val == k)
+        {
+            n->next = temp->next;
+            (temp->next)->prev = n;
+            n->prev = temp;
+            temp->next = n;
+            return;
+        }
+        temp = temp->next;
+    }
+    if (temp->next == head && temp->val == k)
+    {
+        n->next = head;
+        n->prev = temp;
+        head->prev = n;
+        temp->next = n;
+        return;
+    }
+}
