@@ -141,3 +141,46 @@ void CDLL::insertAtPosition(NODE *&head)
         return;
     }
 }
+
+void CDLL::deleteFromPosition(NODE *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    int k = head->getKeyForSearch();
+    NODE *temp = head;
+    NODE *temp2 = head;
+    if (temp->next == head && temp->val == k)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    while (temp->next != head)
+    {
+        if (temp->val == k)
+        {
+            if (temp == head)
+            {
+                (temp->prev)->next = temp->next;
+                (temp->next)->prev = temp->prev;
+                head = temp->next;
+                delete temp;
+                return;
+            }
+            (temp->prev)->next = temp->next;
+            (temp->next)->prev = temp->prev;
+            delete temp;
+            return;
+        }
+        temp = temp->next;
+    }
+    if (temp->next == head && temp->val == k)
+    {
+        (temp->prev)->next = head;
+        head->prev = temp->prev;
+        delete temp;
+        return;
+    }
+}
