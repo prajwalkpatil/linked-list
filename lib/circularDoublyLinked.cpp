@@ -76,3 +76,24 @@ void CDLL::deleteFromEnd(NODE *&head)
     head->prev = temp2;
     delete temp;
 }
+
+void CDLL::deleteFromFront(NODE *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    if (temp->next == temp)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    NODE *temp2 = head;
+    temp2 = temp2->prev;
+    (temp->next)->prev = temp2;
+    temp2->next = temp->next;
+    head = temp->next;
+    delete temp;
+}
