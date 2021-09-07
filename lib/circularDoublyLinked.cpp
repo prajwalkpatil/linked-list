@@ -39,3 +39,20 @@ void CDLL::insertAtFront(NODE *&head)
     temp->prev = n;
     head = n;
 }
+
+void CDLL::insertAtEnd(NODE *&head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        n->next = n;
+        n->prev = n;
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    n->prev = temp->prev;
+    (temp->prev)->next = n;
+    n->next = temp;
+    temp->prev = n;
+}
