@@ -56,3 +56,23 @@ void CDLL::insertAtEnd(NODE *&head)
     n->next = temp;
     temp->prev = n;
 }
+
+void CDLL::deleteFromEnd(NODE *&head)
+{
+    if (head == NULL)
+    {
+        return;
+    }
+    NODE *temp = head;
+    if (temp->next == temp)
+    {
+        head = NULL;
+        delete temp;
+        return;
+    }
+    temp = temp->prev;
+    NODE *temp2 = temp->prev;
+    temp2->next = head;
+    head->prev = temp2;
+    delete temp;
+}
