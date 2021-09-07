@@ -21,3 +21,21 @@ void CDLL::display(NODE *&head)
     temp->displayNode();
     std::cout << " Head";
 }
+
+void CDLL::insertAtFront(NODE *&head)
+{
+    NODE *n = new NODE();
+    if (head == NULL)
+    {
+        n->next = n;
+        n->prev = n;
+        head = n;
+        return;
+    }
+    NODE *temp = head;
+    n->prev = temp->prev;
+    n->next = temp;
+    (temp->prev)->next = n;
+    temp->prev = n;
+    head = n;
+}
