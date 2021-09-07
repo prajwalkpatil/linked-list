@@ -1,3 +1,5 @@
+//Author: Prajwal Patil
+//Program: Doubly Linked List.
 #include <iostream>
 #include "../header/doublyNode.h"
 

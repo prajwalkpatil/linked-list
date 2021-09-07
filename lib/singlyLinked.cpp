@@ -1,3 +1,5 @@
+//Author: Prajwal Patil
+//Program: Singly Linked List.
 #include <iostream>
 #include "../header/singlyNode.h"
 

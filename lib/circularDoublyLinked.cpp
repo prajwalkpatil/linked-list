@@ -1,3 +1,5 @@
+//Author: Prajwal Patil
+//Program: Circular Doubly Linked List.
 #include <iostream>
 #include "../header/doublyNode.h"
 
