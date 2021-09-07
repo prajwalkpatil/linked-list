@@ -41,4 +41,14 @@ namespace DLL
     void deleteFromPosition(NODE *&);
     void display(NODE *&);
 }
+namespace CDLL
+{
+    void insertAtFront(NODE *&);
+    void insertAtEnd(NODE *&);
+    void insertAtPosition(NODE *&);
+    void deleteFromFront(NODE *&);
+    void deleteFromEnd(NODE *&);
+    void deleteFromPosition(NODE *&);
+    void display(NODE *&);
+}
 #endif
