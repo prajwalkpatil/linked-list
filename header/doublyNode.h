@@ -1,5 +1,4 @@
-#ifndef _DOUBLY_LINKED_
-#define _DOUBLY_LINKED_
+#pragma once
 #include <iostream>
 class NODE
 {
@@ -51,4 +50,3 @@ namespace CDLL
     void deleteFromPosition(NODE *&);
     void display(NODE *&);
 }
-#endif

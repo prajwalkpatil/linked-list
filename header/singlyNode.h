@@ -1,5 +1,4 @@
-#ifndef _SINGLY_LINKED_
-#define _SINGLY_LINKED_
+#pragma once
 #include <iostream>
 class NODE
 {
@@ -49,4 +48,3 @@ namespace CSLL
     void deleteFromPosition(NODE *&);
     void display(NODE *&);
 }
-#endif
